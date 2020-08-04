@@ -55,12 +55,13 @@ header img {
   scroll-snap-align: start;
   display: flex;
   align-items: center;
-  justify-content: center;
   text-align: center;
   font-size: 21px;
   line-height: 1.381;
   font-weight: 400;
   letter-spacing: 0.011em;
+  flex-direction:column;
+  padding:2em;
 }
 #mainframe h1 {
   font-size: 48px;
@@ -68,4 +69,7 @@ header img {
   font-weight: 600;
   letter-spacing: -0.003em;
   color: #f5f5f7;
+}
+iframe#stream {
+    flex-grow: 1;
 }
