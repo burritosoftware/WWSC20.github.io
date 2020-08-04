@@ -2,12 +2,22 @@
   box-sizing: border-box;
 }
 
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 0;
   background: black;
   color: white;
   font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -23,10 +33,26 @@ header > div {
   max-width: 980px;
   width: 100%;
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 
 header img {
   width: 1.5em;
   height: 1.5em;
+}
+#mainframe {
+  left: 0;
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+#mainframe iframe {
+  border: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 48px);
+  position: absolute;
 }
