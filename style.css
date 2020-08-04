@@ -1,11 +1,31 @@
-/* CSS files add styling rules to your content */
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: helvetica, arial, sans-serif;
-  margin: 2em;
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: system-ui, sans-serif;
 }
 
-h1 {
-  font-style: italic;
-  color: #373fff;
+header {
+  display: flex;
+  height: 3rem;
+  border-bottom: 1px solid #ffffff47;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  justify-content: center;
+}
+header > div {
+  max-width: 980px;
+  width: 100%;
+  display: flex;
+}
+
+header img {
+  width: 1.5em;
+  height: 1.5em;
 }
