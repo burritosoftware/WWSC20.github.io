@@ -30,10 +30,13 @@ header {
   justify-content: center;
 }
 header > div {
-  max-width: 980px;
   width: 100%;
   display: flex;
   align-items: center;
+}
+
+.container {
+  max-width: 980px;
 }
 
 header img {
@@ -94,12 +97,12 @@ nav ul li a {
   text-decoration: none;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
   color: #66bbff;
 }
 
-#logo{
-  flex-grow:1;
+#logo {
+  flex-grow: 1;
   color: #fff;
   text-decoration: none;
 }
