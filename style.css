@@ -72,6 +72,9 @@ header img {
 }
 iframe#stream {
   flex-grow: 1;
+  margin: 32px;
+  border-radius: 13px;
+  box-shadow: 0 3px 26px #ffffff38, 0 1px 3px #ffffff7a;
 }
 nav ul {
   display: flex;
@@ -97,4 +100,6 @@ nav ul li a:hover{
 
 #logo{
   flex-grow:1;
+  color: #fff;
+  text-decoration: none;
 }
