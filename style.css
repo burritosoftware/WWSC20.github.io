@@ -60,8 +60,8 @@ header img {
   line-height: 1.381;
   font-weight: 400;
   letter-spacing: 0.011em;
-  flex-direction:column;
-  padding:2em;
+  flex-direction: column;
+  padding: 2em;
 }
 #mainframe h1 {
   font-size: 48px;
@@ -71,5 +71,30 @@ header img {
   color: #f5f5f7;
 }
 iframe#stream {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+nav ul {
+  display: flex;
+  margin: 0;
+}
+
+nav ul li {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  display: inline-block;
+  margin-left: 9px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  color: #66bbff;
+}
+
+#logo{
+  flex-grow:1;
 }
