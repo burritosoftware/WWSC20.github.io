@@ -115,3 +115,13 @@ nav ul li a:hover {
   filter: grayscale(1) invert(1) brightness(2.5) invert(1);
   display:block;
 }
+
+.ad {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw - 5rem);
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
