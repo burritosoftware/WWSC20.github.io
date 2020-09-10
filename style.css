@@ -54,13 +54,11 @@ header img {
   position: relative;
   overflow: auto;
   overflow: overlay;
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(100%);
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 }
 #mainframe > * {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
@@ -79,11 +77,8 @@ header img {
   letter-spacing: -0.003em;
   color: #f5f5f7;
 }
-iframe#stream {
+#stream {
   flex-grow: 1;
-  margin: 32px;
-  border-radius: 13px;
-  box-shadow: 0 3px 26px #ffffff38, 0 1px 3px #ffffff7a;
 }
 nav ul {
   display: flex;
@@ -127,7 +122,7 @@ a:hover {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
 }
-.schedule {
+.schedule, #stream {
   margin: 1rem;
   border: 1px solid #ffffff9e;
   box-shadow: 0 2px 7px #ffffff4a;
