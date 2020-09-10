@@ -41,6 +41,8 @@ header > div {
 
 .container {
   max-width: 980px;
+  align-self: center;
+  width: 100%;
 }
 
 header img {
@@ -111,17 +113,27 @@ nav ul li a:hover {
   text-decoration: none;
 }
 
-.adsbycontextcue{
+.adsbycontextcue {
   filter: grayscale(1) invert(1) brightness(2.5) invert(1);
-  display:block;
+  display: block;
 }
 
 .ad {
-    display: flex;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    width: calc(100vw - 5rem);
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  width: calc(100vw - 5rem);
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+.schedule {
+  margin: 1rem;
+  border: 1px solid #ffffff9e;
+  box-shadow: 0 2px 7px #ffffff4a;
+}
+
+.schedule > div {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ffffff57;
 }
