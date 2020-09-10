@@ -98,12 +98,12 @@ nav ul li {
   margin-left: 9px;
 }
 
-nav ul li a {
+a {
   color: #fff;
   text-decoration: none;
 }
 
-nav ul li a:hover {
+a:hover {
   color: #66bbff;
 }
 
