@@ -18,6 +18,7 @@
     ></script>
   </head>
   <body>
+    <script>(function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init() } })();</script>
     <header>
       <div class="container">
         <img
@@ -85,7 +86,7 @@
         color: "#eee"
       })
     </script>
-    <script async>
+    <script>
       let count = () => {
         let distance = new Date(
           new Date("2020-09-19T10:00:00-07:00") - new Date()
@@ -126,7 +127,9 @@
               e.data[0] + ""
             )
               .split("|")
-              .map((e,i)=>`${i==0?"<b>":""}${e}${i==0?"</b>":""}`)
+              .map(
+                (e, i) => `${i == 0 ? "<b>" : ""}${e}${i == 0 ? "</b>" : ""}`
+              )
               .join("</div><div>")}
             </div></div></div>`
           )
