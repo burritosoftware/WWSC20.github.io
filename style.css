@@ -133,4 +133,6 @@ a:hover {
 .schedule > div {
   padding: 0.5rem;
   border-bottom: 1px solid #ffffff57;
+  text-align: left;
+  display: flex;
 }

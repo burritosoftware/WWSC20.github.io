@@ -45,12 +45,15 @@
             Write shortcuts. Blow minds.
           </h1>
           <h2 id="countdown">
-            <span class="hh">00</span>:<span class="mm">00</span>:<span class="ss" style="filter: url('#blur');">00</span>
+            <span class="hh">00</span>:<span class="mm">00</span>:<span
+              class="ss"
+              >00</span
+            >
           </h2>
           <p>
-            Join us for the brand new WWSC — an all-online
-            Shortcuts presentation announcing breakthrough shortcuts, workshops
-            to learn new skills, and more.
+            Join us for the brand new WWSC — an all-online Shortcuts
+            presentation announcing breakthrough shortcuts, workshops to learn
+            new skills, and more.
           </p>
           <div class="ad"></div>
         </div>
@@ -62,32 +65,7 @@
           </h1>
           <div class="schedule">
             <div>
-              Papercuts by <a href="https://routinehub.co/user/eaic">eaic</a>
-            </div>
-            <div>
-              Equestria by
-              <a href="https://routinehub.co/user/zachary7829">zachary7829</a>
-            </div>
-            <div>
-              Demo Multiplayer Game by
-              <a href="https://routinehub.co/user/nobody5050">nobody6502</a>
-            </div>
-            <div>
-              SnooCuts by
-              <a href="https://routinehub.co/user/FifiTheBulldog"
-                >FifiTheBulldog</a
-              >
-            </div>
-            <div>
-              Pill by
-              <a href="https://routinehub.co/user/Macintosh512k"
-                >Macintosh512k</a
-              >
-            </div>
-            <div>
-              Jellycuts & Jellycuts Helper by
-              <a href="https://routinehub.co/user/ActuallyZach">ActuallyZach</a>
-              & <a href="https://routinehub.co/user/Burrito">Burrito</a>
+              Loading...
             </div>
           </div>
         </div>
@@ -101,6 +79,29 @@
         color: "#eee"
       })
     </script>
+    <script async>
+      (async () => {
+        document.querySelector(
+          "#schedule .schedule"
+        ).innerHTML = (await (await fetch(
+          "https://jsonp.afeld.me/?url=https%3A%2F%2Fhoraro.org%2Fwwsc%2F2020.json%3Fnamed%3Dtrue"
+        )).json()).schedule.items
+          .map(
+            e => `
+            <div>
+            
+              ${new Date(e.scheduled)
+                .toLocaleTimeString()
+                .replace(/(?<=\d+\:\d+)\:\d+/, "")} - ${new Date(
+              new Date(e.scheduled) + e.length_t * 1000 * 60
+            )
+              .toLocaleTimeString()
+              .replace(/(?<=\d+\:\d+)\:\d+/, "")} ${e.data[0]}
+            </div>`
+          )
+          .join("\n");
+      })();
+    </script>
     <script type="module" async>
       import "https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate";
       import "./ad.js";
@@ -108,19 +109,5 @@
       const el = document.createElement("pwa-update");
       document.body.appendChild(el);
     </script>
-    <?xml version="1.0" standalone="no"?>
-    <svg
-      width="1"
-      height="1"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <defs>
-        <filter id="blur">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="0 20" />
-        </filter>
-      </defs>
-    </svg>
   </body>
 </html>
