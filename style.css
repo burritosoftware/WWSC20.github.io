@@ -134,5 +134,7 @@ a:hover {
   padding: 0.5rem;
   border-bottom: 1px solid #ffffff57;
   text-align: left;
-  display: flex;
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  grid-gap: 1rem;
 }
