@@ -45,10 +45,10 @@
             Write shortcuts. Blow minds.
           </h1>
           <h2 id="countdown">
-            <span class="hh">00</span>:<span class="mm">00</span>:<span
-              class="ss"
+            <span class="dd">00</span>:<span class="hh">00</span>:<span
+              class="mm"
               >00</span
-            >
+            >:<span class="ss">00</span>
           </h2>
           <p>
             Join us for the brand new WWSC — an all-online Shortcuts
@@ -63,7 +63,12 @@
           <h1>
             Schedule
           </h1>
-          <a href="webcal://horaro.org/wwsc/2020.ical"><img src="https://cdn.discordapp.com/attachments/740339189517647883/754045245716693002/image0.png" height="60" alt="Add to Calendar"></a>
+          <a href="webcal://horaro.org/wwsc/2020.ical"
+            ><img
+              src="https://cdn.discordapp.com/attachments/740339189517647883/754045245716693002/image0.png"
+              height="60"
+              alt="Add to Calendar"
+          /></a>
           <div class="schedule">
             <div>
               Loading...
@@ -81,12 +86,32 @@
       })
     </script>
     <script async>
+      let count = () => {
+        let distance = new Date(
+          new Date("2020-09-19T10:00:00-07:00") - new Date()
+        );
+        document.querySelector("#countdown > span.dd").textContent = (
+          Math.floor(distance / (1000 * 60 * 60 * 24)) + ""
+        ).padStart(2, "0");
+        document.querySelector("#countdown > span.hh").textContent = (
+          Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + ""
+        ).padStart(2, "0");
+        document.querySelector("#countdown > span.mm").textContent = (
+          Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) + ""
+        ).padStart(2, "0");
+        document.querySelector("#countdown > span.ss").textContent = (
+          Math.floor((distance % (1000 * 60)) / 1000) + ""
+        ).padStart(2, "0");
+        setTimeout(count, 1000);
+      };
+      count();
       (async () => {
         document.querySelector(
           "#schedule .schedule"
         ).innerHTML = (await (await fetch(
           "https://jsonp.afeld.me/?url=https%3A%2F%2Fhoraro.org%2Fwwsc%2F2020.json%3Fnamed%3Dtrue"
-        )).json()).schedule.items.filter(e=>!!e.data[0])
+        )).json()).schedule.items
+          .filter(e => !!e.data[0])
           .map(
             e => `
             <div>
@@ -97,7 +122,12 @@
               new Date(e.scheduled) + e.length_t * 1000 * 60
             )
               .toLocaleTimeString()
-          .replace(/(?<=\d+\:\d+)\:\d+/, "")}</div><div><div>${(e.data[0]+"").split("|").join("</div><div>")}
+              .replace(/(?<=\d+\:\d+)\:\d+/, "")}</div><div><div>${(
+              e.data[0] + ""
+            )
+              .split("|")
+              .map((e,i)=>`${i==0?"<b>":""}${e}${i==0?"</b>":""}`)
+              .join("</div><div>")}
             </div></div></div>`
           )
           .join("\n");

@@ -110,11 +110,6 @@ a:hover {
     text-decoration: none;
 }
 
-.adsbycontextcue {
-    filter: grayscale(1) invert(1) brightness(2.5) invert(1);
-    display: block;
-}
-
 .ad {
     display: flex;
     overflow: hidden;
@@ -125,8 +120,7 @@ a:hover {
     margin-right: 2.5rem;
 }
 
-.hh,.mm,.ss {
-    width: 2em;
+.dd,.hh,.mm,.ss {
     display: inline-block;
     text-align: center;
 }
@@ -144,7 +138,7 @@ a:hover {
     border-bottom: 1px solid #ffffff57;
     text-align: left;
     display: grid;
-    grid-template-columns: 11rem 1fr;
+    grid-template-columns: 10rem 1fr;
     grid-gap: 1rem;
 }
 
@@ -153,4 +147,12 @@ a:hover {
         display: flex;
         flex-direction: column;
     }
+}
+.schedule>div>div:first-child {
+    font-size: 1.2rem;
+    color: #ffffffa8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
