@@ -44,8 +44,11 @@
             <br />
             Write shortcuts. Blow minds.
           </h1>
+          <h2 id="countdown">
+            <span class="hh">00</span>:<span class="mm">00</span>:<span class="ss" style="filter: url('#blur');">00</span>
+          </h2>
           <p>
-            Coming soon. Join us for the brand new WWSC — an all-online
+            Join us for the brand new WWSC — an all-online
             Shortcuts presentation announcing breakthrough shortcuts, workshops
             to learn new skills, and more.
           </p>
@@ -105,5 +108,19 @@
       const el = document.createElement("pwa-update");
       document.body.appendChild(el);
     </script>
+    <?xml version="1.0" standalone="no"?>
+    <svg
+      width="1"
+      height="1"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <filter id="blur">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="0 20" />
+        </filter>
+      </defs>
+    </svg>
   </body>
 </html>
