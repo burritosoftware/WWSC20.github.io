@@ -18,7 +18,8 @@
     ></script>
   </head>
   <body>
-    <script>(function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init() } })();</script>
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init(); eruda.position({x:0,y:0})</script>
     <header>
       <div class="container">
         <img
@@ -75,6 +76,7 @@
               Loading...
             </div>
           </div>
+          <small>All times are local</small>
         </div>
       </div>
     </div>
@@ -119,11 +121,11 @@
             <div>
               ${new Date(e.scheduled)
                 .toLocaleTimeString()
-                .replace(/(?<=\d+\:\d+)\:\d+/, "")} - ${new Date(
+                .replace(/\d+\:\d+\:\d+/, e=>e.split(":").slice(0,-1).join(":"))} - ${new Date(
               new Date(e.scheduled) + e.length_t * 1000 * 60
             )
               .toLocaleTimeString()
-              .replace(/(?<=\d+\:\d+)\:\d+/, "")}</div><div><div>${(
+              .replace(/\d+\:\d+\:\d+/, e=>e.split(":").slice(0,-1).join(":"))}</div><div><div>${(
               e.data[0] + ""
             )
               .split("|")
